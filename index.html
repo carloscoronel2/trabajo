@@ -1,0 +1,19 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+    	{% for empleado in persona_list %}
+    	    <h2> {{ empleado.nombre }} <b>{{ empleado.apellido }}</b> </h2>
+    	    <p> {{ empleado.nacimiento }} </p>
+            {% if empleado.edad %}
+             <p> {{ empleado.edad}} </p>
+             {% endif %} 
+           <div>
+            {% if empleado.foto %}
+                <img src="{{ empleado.foto.url }}" alt="{{ empleado.nombre }} {{empleado.apellido}}">
+                {% endif %} 
+            </div>
+        {% endfor %}
+    </body>
+</html>
